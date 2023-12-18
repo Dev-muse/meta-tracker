@@ -1,7 +1,17 @@
-import Link from 'next/link'
+'use client';
+
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import classNames from 'classnames';
+
+
 import { RiAiGenerate } from "react-icons/ri";
+import { text } from 'stream/consumers';
 
 const NavBar = () => {
+
+ const currentPath = usePathname()
+
   const navLinks = [
     {label: 'Dashboard', link: '/'},
     {label: 'Issues', link: '/issues'},
@@ -14,7 +24,12 @@ const NavBar = () => {
            
            {navLinks.map((link,key)=>(
             <li key={key}>
-                <Link className='text-slate-500 hover:text-slate-800 transition-colors ' href={link.link}>{link.label}</Link>
+                <Link className={classNames({
+                    'text-slate-700' : link.link === currentPath,
+                    'text-slate-400': link.link !== currentPath,
+                    'hover:text-slate-900 transition-colors': true 
+
+                })} href={link.link}>{link.label}</Link>
             </li>
 
            ))}

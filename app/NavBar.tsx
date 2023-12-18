@@ -6,8 +6,7 @@ import classNames from 'classnames';
 
 
 import { RiAiGenerate } from "react-icons/ri";
-import { text } from 'stream/consumers';
-
+ 
 const NavBar = () => {
 
  const currentPath = usePathname()

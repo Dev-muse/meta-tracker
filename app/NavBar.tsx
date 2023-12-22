@@ -11,10 +11,12 @@ const NavBar = () => {
 
  const currentPath = usePathname()
 
-  const navLinks = [
+const navLinks = [
     {label: 'Dashboard', link: '/'},
     {label: 'Issues', link: '/issues'},
   ]
+
+
 
   return (
     <nav className="flex space-x-6 items-center mb-4 px-4 h-14 border-2 border-b ">
@@ -24,6 +26,7 @@ const NavBar = () => {
            {navLinks.map((link,key)=>(
             <li key={key}>
                 <Link className={classNames({
+                  
                     'text-slate-700' : link.link === currentPath,
                     'text-slate-400': link.link !== currentPath,
                     'hover:text-slate-900 transition-colors': true 

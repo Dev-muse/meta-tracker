@@ -10,7 +10,7 @@ const NewIssuePage = () => {
           <TextField.Input placeholder="Title" />
       </TextField.Root>
       <TextArea placeholder="Description…" />
-      <Button highContrast color="iris" variant="surface" size='4' onClick={()=>route.push('/issues')}>Submit</Button>
+      <Button  variant="surface" size='4' onClick={()=>route.push('/issues')}>Submit Issue</Button>
     </div>
   )
 }

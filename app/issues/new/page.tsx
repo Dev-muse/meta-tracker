@@ -1,6 +1,11 @@
 'use client'
 import {TextField,Button , TextArea} from '@radix-ui/themes'
 import { useRouter } from 'next/navigation';
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
+
+
+
 
 const NewIssuePage = () => {
   const route = useRouter()
@@ -9,7 +14,7 @@ const NewIssuePage = () => {
       <TextField.Root>
           <TextField.Input placeholder="Title" />
       </TextField.Root>
-      <TextArea placeholder="Description…" />
+      <SimpleMDE placeholder="Description…" />
       <Button  variant="surface" size='4' onClick={()=>route.push('/issues')}>Submit Issue</Button>
     </div>
   )

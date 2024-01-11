@@ -20,16 +20,16 @@ const navLinks = [
 
   return (
     <nav className="flex space-x-6 items-center mb-4 px-4 h-14 border-2 border-b ">
-        <Link href='/'><RiAiGenerate size='28px' /></Link>
+        <Link href='/' className="flex  items-center"><RiAiGenerate size='28px' /><span className="ml-2 text-[28px]">Meta<span className="font-bold">Tracker</span></span></Link>
         <ul className='flex space-x-6 '>
            
            {navLinks.map((link,key)=>(
             <li key={key}>
                 <Link className={classNames({
                   
-                    'text-slate-700' : link.link === currentPath,
-                    'text-slate-400': link.link !== currentPath,
-                    'hover:text-slate-900 transition-colors': true 
+                    'text-pink-700 hover:text-pink-900 transition-colors' : link.link === currentPath,
+                    'text-slate-400 hover:text-slate-900 transition-colors': link.link !== currentPath,
+                
 
                 })} href={link.link}>{link.label}</Link>
             </li>
